@@ -30,6 +30,7 @@ services:
       - PT_PORT=${PT_PORT:?Env var PT_PORT is not set.}
       # Exit with an error message if EMAIL is unset or empty.
       - EMAIL=${EMAIL:?Env var EMAIL is not set.}
+      - INCLUDE_NYX=${INCLUDE_NYX:-false}
     volumes:
       - data:/var/lib/tor
     ports:

@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
     tor \
     tor-geoipdb \
     obfs4proxy \
+    nyx \
     --no-install-recommends
 
 # Allow obfs4proxy to bind to ports < 1024.

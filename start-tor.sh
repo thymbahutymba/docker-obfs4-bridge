@@ -26,5 +26,14 @@ ServerTransportListenAddr obfs4 0.0.0.0:${PT_PORT}
 ContactInfo ${EMAIL}
 EOF
 
+if [ ${INCLUDE_NYX} = true ]; then
+	cat >> /etc/tor/torrc <<- EOF
+
+	# Enable local access for Nyx
+	ControlPort 9051
+	CookieAuthentication 1
+	EOF
+fi
+
 echo "Starting tor."
 tor -f /etc/tor/torrc
